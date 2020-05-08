@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="706.1599731445312" minWidth="1277.357177734375" prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.gazeboindustries.questionsgame.com.FXMLController">
+  <children>
+    <ImageView fx:id="background" disable="false" fitHeight="719.3600463867188" fitWidth="1284.5715336357775" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+      <image>
+        <Image url="@../GameImages/backgroundGame.jpg" />
+      </image>
+    </ImageView>
+    <Label layoutX="406.0" layoutY="24.0" text="QUESTIONS GAME">
+      <font>
+        <Font name="Impact" size="70.0" />
+      </font>
+    </Label>
+    <Button layoutX="474.0" layoutY="345.0" minHeight="44.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="86.0" prefWidth="338.0" text="COMEÇAR" wrapText="false">
+      <font>
+        <Font name="Impact" size="50.0" />
+      </font>
+    </Button>
+  </children>
+</AnchorPane>
