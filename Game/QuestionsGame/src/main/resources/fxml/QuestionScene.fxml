@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="720.1599731445312" minWidth="1291.357177734375" prefHeight="720.1599731445312" prefWidth="1291.357177734375" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.gazeboindustries.questionsgame.com.QuestionController">
+  <children>
+    <ImageView fx:id="background" disable="false" fitHeight="721.6400463632184" fitWidth="1288.6429443359375" layoutX="1.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="true" smooth="true">
+      <image>
+        <Image url="@../GameImages/backgroundGame.jpg" />
+      </image>
+    </ImageView>
+    <Label fx:id="lblSchoolSubject" layoutX="583.0" layoutY="14.0" text="*MATÉRIA">
+      <font>
+        <Font name="Impact" size="50.0" />
+      </font>
+    </Label>
+    <ImageView fx:id="imgQuestion" fitHeight="462.75" fitWidth="1000.0" layoutX="176.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+    <Button fx:id="btnResponseA" layoutX="176.0" layoutY="582.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="156.9998779296875" text="A">
+      <font>
+        <Font name="Impact" size="25.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button fx:id="btnResponseC" font="$x1" layoutX="176.0" layoutY="649.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="157.0" text="C" />
+    <Button fx:id="btnResponseB" font="$x1" layoutX="406.0" layoutY="582.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="156.99990000000253" text="B" />
+    <Button fx:id="btnResponseD" font="$x1" layoutX="407.0" layoutY="649.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="157.0" text="D" />
+    <Button fx:id="btnResponseE" font="$x1" layoutX="619.0" layoutY="611.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="157.0" text="E" />
+    <Label font="$x1" layoutX="896.0" layoutY="594.0" text="RESPOSTAS CERTAS:" />
+    <Label font="$x1" layoutX="882.0" layoutY="649.0" text="RESPOSTAS ERRADAS:" />
+    <Label fx:id="lblRightResponses" font="$x1" layoutX="1130.0" layoutY="596.0" text="0" />
+    <Label fx:id="lblWrongResponses" font="$x1" layoutX="1130.0" layoutY="648.0" text="0" />
+  </children>
+</AnchorPane>
