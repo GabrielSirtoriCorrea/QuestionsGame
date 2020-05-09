@@ -20,7 +20,6 @@
         <Font name="Impact" size="50.0" />
       </font>
     </Label>
-    <ImageView fx:id="imgQuestion" fitHeight="462.75" fitWidth="1000.0" layoutX="176.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
     <Button fx:id="btnResponseA" layoutX="176.0" layoutY="582.0" minHeight="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="156.9998779296875" text="A">
       <font>
         <Font name="Impact" size="25.0" fx:id="x1" />
@@ -34,5 +33,6 @@
     <Label font="$x1" layoutX="882.0" layoutY="649.0" text="RESPOSTAS ERRADAS:" />
     <Label fx:id="lblRightResponses" font="$x1" layoutX="1130.0" layoutY="596.0" text="0" />
     <Label fx:id="lblWrongResponses" font="$x1" layoutX="1130.0" layoutY="648.0" text="0" />
+    <ImageView fx:id="imgQuestion" fitHeight="462.75" fitWidth="1000.0" layoutX="176.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
   </children>
 </AnchorPane>
