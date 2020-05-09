@@ -37,7 +37,7 @@ public class DataBaseConnection {
     public String[] getQuestion(){
         try{
             this.GeneratedID = new Random();
-            int selectedID = GeneratedID.nextInt(1) + 1;
+            int selectedID = GeneratedID.nextInt(3) + 1;
 
             System.out.println(selectedID);
             
