@@ -15,9 +15,10 @@ import javafx.scene.Scene;
 
 public class FXMLController implements Initializable {
 
+
     @FXML
     private void StartGame(ActionEvent event) {
-        
+
         try {
             SceneBase QuestionScene = new SceneBase((Parent) FXMLLoader.load(getClass().getResource("/fxml/QuestionScene.fxml")));
             MainApp.ChangeScene(QuestionScene.getScene());

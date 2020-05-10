@@ -27,7 +27,7 @@ public class QuestionController implements Initializable {
     @FXML
     private Label lblWrongResponses;
 
-    String[] response;
+    static String[] response;
     DataBaseConnection connection;
     String AUDIO_URL;
     AudioClip clip;
@@ -36,6 +36,8 @@ public class QuestionController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
+        
+
         connection = new DataBaseConnection();
         response = connection.getQuestion();
 
@@ -84,38 +86,38 @@ public class QuestionController implements Initializable {
             clip.play();
 
             QuestionsControl.addAnswerCorrect();
+
+            try {
+                SceneBase refreshScene = new SceneBase((Parent) FXMLLoader.load(getClass().getResource("/fxml/QuestionScene.fxml")));
+                MainApp.ChangeScene(refreshScene.getScene());
+            } catch (IOException ex) {
+                // TODO Auto-generated catch block
+                ex.printStackTrace();
+            }
+
         } else {
             AUDIO_URL = getClass().getResource("/Audio/SOM ERRO EFEITO SONORO.mp3").toString();
             clip = new AudioClip(AUDIO_URL);
             clip.play();
-
-            try {
-
-                File fileResolve = new File(response[4]);
-                System.out.println(fileResolve.toURI().toString());
-                Image imgResolve = new Image(fileResolve.toURI().toString());
-                imgQuestion.setImage(imgResolve);
-
-                imgQuestion.setVisible(false);
-
-                TimeUnit.SECONDS.sleep(10);
-
-            } catch (Exception e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
-
             QuestionsControl.addAnswerWrong();
-        }
 
-
-        try {
-            refreshScene = new SceneBase((Parent) FXMLLoader.load(getClass().getResource("/fxml/QuestionScene.fxml")));
+            //File fileResolve = new File(response[4]);
+            //System.out.println(fileResolve.toURI().toString());
+            //Image imgResolve = new Image("/GameImages/Answers/FisicaResposta1.jpg");
+            //imgQuestion.setImage(imgResolve);
+            
+            try {
+            SceneBase refreshScene = new SceneBase((Parent) FXMLLoader.load(getClass().getResource("/fxml/ResponseScene.fxml")));
             MainApp.ChangeScene(refreshScene.getScene());
-        } catch (IOException e) {
+        } catch (IOException ex) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            ex.printStackTrace();
         }
+           
+        }
+
+
+        
 
     }
 
