@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,8 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.AudioClip;
 
-
-public class QuestionController implements Initializable{
+public class QuestionController implements Initializable {
     @FXML
     private ImageView imgQuestion;
     @FXML
@@ -32,7 +32,6 @@ public class QuestionController implements Initializable{
     String AUDIO_URL;
     AudioClip clip;
     SceneBase refreshScene;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,47 +49,65 @@ public class QuestionController implements Initializable{
 
         lblCorrectResponses.setText(Integer.toString(QuestionsControl.AnswersCorrect));
         lblWrongResponses.setText(Integer.toString(QuestionsControl.AnswersWrong));
+
     }
 
     @FXML
-    private void btnResponseA (ActionEvent event){
+    private void btnResponseA(ActionEvent event) {
         checkButtonPressed("A");
     }
+
     @FXML
-    private void btnResponseB (ActionEvent event){
+    private void btnResponseB(ActionEvent event) {
         checkButtonPressed("B");
     }
 
     @FXML
-    private void btnResponseC (ActionEvent event){
+    private void btnResponseC(ActionEvent event) {
         checkButtonPressed("C");
     }
 
     @FXML
-    private void btnResponseD (ActionEvent event){
+    private void btnResponseD(ActionEvent event) {
         checkButtonPressed("D");
     }
 
     @FXML
-    private void btnResponseE (ActionEvent event){
+    private void btnResponseE(ActionEvent event) {
         checkButtonPressed("E");
     }
 
-
-    private void checkButtonPressed(String letter){
-        if(response[3].equals(letter)){
+    private void checkButtonPressed(String letter) {
+        if (response[3].equals(letter)) {
             AUDIO_URL = getClass().getResource("/Audio/POP.mp3").toString();
             clip = new AudioClip(AUDIO_URL);
             clip.play();
-        
+
             QuestionsControl.addAnswerCorrect();
-        }else{
+        } else {
             AUDIO_URL = getClass().getResource("/Audio/SOM ERRO EFEITO SONORO.mp3").toString();
             clip = new AudioClip(AUDIO_URL);
             clip.play();
 
+            try {
+
+                File fileResolve = new File(response[4]);
+                System.out.println(fileResolve.toURI().toString());
+                Image imgResolve = new Image(fileResolve.toURI().toString());
+                imgQuestion.setImage(imgResolve);
+
+                imgQuestion.setVisible(false);
+
+                TimeUnit.SECONDS.sleep(10);
+
+            } catch (Exception e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+
             QuestionsControl.addAnswerWrong();
         }
+
 
         try {
             refreshScene = new SceneBase((Parent) FXMLLoader.load(getClass().getResource("/fxml/QuestionScene.fxml")));
