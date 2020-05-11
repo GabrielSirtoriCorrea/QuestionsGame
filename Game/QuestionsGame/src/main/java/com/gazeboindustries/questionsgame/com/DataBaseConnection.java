@@ -12,9 +12,7 @@ import java.util.Vector;
 import javax.annotation.Generated;
 
 public class DataBaseConnection {
-    private StringBuilder sql;
     private Connection connection;
-    private Statement statement;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
     private Random GeneratedID;
@@ -38,12 +36,12 @@ public class DataBaseConnection {
     public String[] getQuestion(){
         try{
             
-            GeneratedID = new Random();
-
             while(true){
-                selectedID = GeneratedID.nextInt(16) + 1;
+                GeneratedID = new Random();
+                selectedID = GeneratedID.nextInt(19) + 1;
                 if(!BlackListID.contains(selectedID)){
                     BlackListID.add(selectedID);
+                    System.out.println(BlackListID.toArray().toString());
                     break;
                 }
             }
