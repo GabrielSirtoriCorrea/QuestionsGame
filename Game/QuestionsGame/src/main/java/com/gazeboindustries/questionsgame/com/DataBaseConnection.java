@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
+import java.util.Vector;
 
 import javax.annotation.Generated;
 
@@ -18,8 +19,8 @@ public class DataBaseConnection {
     private ResultSet resultSet;
     private Random GeneratedID;
     private String[] response = new String[5];
-
-
+    private Vector<Integer> BlackListID = new Vector<Integer>();
+    private int selectedID; 
 
     public DataBaseConnection(){
         try {
@@ -36,8 +37,16 @@ public class DataBaseConnection {
 
     public String[] getQuestion(){
         try{
-            this.GeneratedID = new Random();
-            int selectedID = GeneratedID.nextInt(3) + 1;
+            
+            GeneratedID = new Random();
+
+            while(true){
+                selectedID = GeneratedID.nextInt(16) + 1;
+                if(!BlackListID.contains(selectedID)){
+                    BlackListID.add(selectedID);
+                    break;
+                }
+            }
 
             System.out.println(selectedID);
             
