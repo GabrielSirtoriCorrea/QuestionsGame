@@ -33,6 +33,6 @@
     <Label font="$x1" layoutX="882.0" layoutY="649.0" text="RESPOSTAS ERRADAS:" />
     <Label id="lblRightResponses" fx:id="lblCorrectResponses" font="$x1" layoutX="1130.0" layoutY="596.0" text="0" />
     <Label fx:id="lblWrongResponses" font="$x1" layoutX="1130.0" layoutY="648.0" text="0" />
-    <ImageView fx:id="imgQuestion" fitHeight="462.75" fitWidth="1000.0" layoutX="176.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fx:id="imgQuestion" fitHeight="462.7499537250012" fitWidth="700.0" layoutX="419.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
   </children>
 </AnchorPane>
